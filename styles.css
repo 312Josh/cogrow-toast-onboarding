@@ -190,3 +190,9 @@ footer a:hover{color:var(--paper)}
 .next a:hover{background:var(--ground-2)}
 .next .t{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,44px);letter-spacing:-.035em;margin-top:8px}
 @media (max-width:640px){.next{grid-template-columns:1fr}.next a + a{border-left:0;border-top:1px solid var(--line);text-align:left}}
+
+/* book */
+.bookgrid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(24px,4vw,64px);align-items:start}
+.calbox{border:1px solid var(--line);background:#101010;min-height:720px}
+.calbox iframe{display:block;width:100%;height:720px;border:0}
+@media (max-width:900px){.bookgrid{grid-template-columns:1fr}.calbox iframe{height:760px}}
