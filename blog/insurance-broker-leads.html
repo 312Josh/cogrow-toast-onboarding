@@ -22,12 +22,23 @@
  extend: {
  colors: {
  primary: "#ffffff",
- "background-light": "#f3f4f6",
- "background-dark": "#0a0a0a",
- "surface-dark": "#141414",
- "surface-darker": "#1a1a1a",
- "border-dark": "#2a2a2a",
- "text-muted": "#888888",
+ "background-light": "#f4f8f5",
+ "background-dark": "#08251b",
+ "surface-dark": "#0e3325",
+ "surface-darker": "#0b2c20",
+ "border-dark": "#1b4a37",
+ "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
  },
  fontFamily: {
  display: ["Inter", "sans-serif"],
@@ -67,7 +78,7 @@
 <style>
  body {
  font-family: 'Inter', sans-serif;
- background-color: #0a0a0a;
+ background-color: #08251b;
  color: #ffffff;
  overflow-x: hidden;
  }
@@ -76,7 +87,7 @@
  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
  }
  .glass-card {
- background: rgba(20, 20, 20, 0.6);
+ background: rgba(11, 44, 32, 0.62);
  backdrop-filter: blur(10px);
  border: 1px solid rgba(255, 255, 255, 0.1);
  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -135,14 +146,14 @@
  pointer-events: none;
  }
  .gradient-text {
- background: linear-gradient(to right, #fff 20%, #666 100%);
+ background: linear-gradient(to right, #fff 20%, #74ad93 100%);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
  }
  </style>
 </head>
 <body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-white top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
 <div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
 <!-- Floating stars -->
 <div class="fixed pointer-events-none z-0" style="top: 20%; left: 15%; opacity: 0.15;">
@@ -172,7 +183,7 @@
 <a class="nav-link hover:text-white" href="/contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
+<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
 </div>
 </nav>
 <main class="w-full max-w-3xl mx-auto px-6 pb-32 pt-16">
@@ -272,7 +283,7 @@
 <div class="glass-card rounded-2xl p-8 my-12 text-center">
 <h3 class="text-xl font-bold text-white mb-3">Find out how fast you're really responding to quote requests</h3>
 <p class="text-gray-400 mb-6">We'll audit your current lead response time and show you exactly where prospects are dropping off to comparison sites.</p>
-<a href="/book.html" class="bg-white text-black px-8 py-3 rounded-full font-bold bubbly-hover shadow-xl shadow-white/10 inline-block">Book a Free Audit</a>
+<a href="/book.html" class="bg-white text-[#08251b] px-8 py-3 rounded-full font-bold bubbly-hover shadow-xl shadow-white/10 inline-block">Book a Free Audit</a>
 </div>
 
 </div>

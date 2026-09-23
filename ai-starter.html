@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<title>AI for your small business, without the software pitch - CoGrow</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#ffffff",
+        "background-dark": "#08251b",
+        "surface-dark": "#0e3325",
+        "surface-darker": "#0b2c20",
+        "border-dark": "#1b4a37",
+        "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
+      },
+      fontFamily: { display: ["Inter", "sans-serif"] },
+      borderRadius: { DEFAULT: "0.75rem" },
+      backgroundImage: { 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))' },
+      animation: { 'orb-float': 'orb-float 20s infinite alternate linear' },
+      keyframes: {
+        'orb-float': {
+          '0%': { transform: 'translate(0, 0) scale(1)' },
+          '50%': { transform: 'translate(10%, 10%) scale(1.1)' },
+          '100%': { transform: 'translate(-5%, 5%) scale(0.9)' },
+        },
+      },
+    },
+  },
+};
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .glass-card {
+    background: rgba(11, 44, 32, 0.62);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+  .gradient-text {
+    background: linear-gradient(to right, #fff 20%, #74ad93 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: all .7s cubic-bezier(0.2,0.8,0.2,1); }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+</style>
+
+<!--
+  ============================================================
+  META PIXEL — replace PIXEL_ID_HERE with the real ID from
+  Events Manager before this page goes live.
+  ============================================================
+-->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID_HERE');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+</head>
+
+<body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
+
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
+
+<!-- Deliberately no nav. This is an ad landing page. Every link is an exit. -->
+<header class="w-full max-w-3xl mx-auto px-6 pt-8 flex items-center gap-2">
+  <span class="material-icons text-white">bubble_chart</span>
+  <span class="font-bold text-xl tracking-tight">CoGrow</span>
+</header>
+
+<main class="w-full max-w-3xl mx-auto px-6 flex flex-col gap-20 pb-24 pt-12">
+
+  <!-- HERO -->
+  <section class="grid-bg rounded-3xl border border-white/5 p-8 md:p-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-green-500"></span>
+      Boston based. Three people. No sales team.
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+      You know AI could help.<br/>
+      <span class="gradient-text">Nobody told you where to start.</span>
+    </h1>
+
+    <p class="text-lg text-gray-400 mb-4 max-w-xl">
+      That's most owners we talk to. They opened ChatGPT once, asked it something,
+      got an okay answer, and never went back.
+    </p>
+    <p class="text-lg text-gray-400 mb-10 max-w-xl">
+      We get on a call, ask how your week actually goes, and find the two or
+      three things worth handing to AI first. Then we set them up. We don't sell
+      software, and we'll use whatever subscription you already pay for.
+    </p>
+
+    <a href="#book" class="inline-flex bg-white text-[#08251b] px-7 py-4 rounded-full font-semibold items-center gap-2 hover:bg-gray-200 transition-all shadow-xl shadow-white/10">
+      Book a free 30-minute call
+      <span class="material-icons text-sm">arrow_forward</span>
+    </a>
+    <p class="text-sm text-gray-500 mt-4">No pitch deck. If it's not a fit we'll tell you.</p>
+  </section>
+
+  <!-- SOUND FAMILIAR -->
+  <section class="reveal">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Sound familiar?</h2>
+    <div class="flex flex-col gap-4 text-gray-400">
+      <p class="glass-card rounded-2xl p-5">You keep hearing AI is going to change everything, and every example you see is about a company ten times your size.</p>
+      <p class="glass-card rounded-2xl p-5">You're paying for tools you barely use. Possibly a couple you forgot you signed up for.</p>
+      <p class="glass-card rounded-2xl p-5">You're still writing the same quote, the same follow-up email, the same five answers to the same five customer questions. Usually at 9pm.</p>
+      <p class="glass-card rounded-2xl p-5">Every ad you scroll past wants you on a free trial of something. None of them explain what to actually do with it.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="reveal">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">How this works</h2>
+    <p class="text-gray-400 mb-8">Three steps. The first one is free and there is no obligation after it.</p>
+
+    <div class="flex flex-col gap-6">
+      <div class="glass-card rounded-2xl p-6 flex gap-5">
+        <div class="text-3xl font-bold text-white/20 shrink-0">1</div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">A real conversation, 30 minutes</h3>
+          <p class="text-gray-400 text-sm">We ask what your week looks like, what keeps getting pushed to the weekend, and where things fall through. You do most of the talking. This part is free.</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 flex gap-5">
+        <div class="text-3xl font-bold text-white/20 shrink-0">2</div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">We come back with a short list</h3>
+          <p class="text-gray-400 text-sm">Two or three specific jobs AI can take off your plate, what each one would take to set up, and what it costs. If we don't think anything on the list is worth your money, we say so and that's the end of it.</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 flex gap-5">
+        <div class="text-3xl font-bold text-white/20 shrink-0">3</div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">We build it and show your team how to use it</h3>
+          <p class="text-gray-400 text-sm">Set up around how you already work, not the other way around. We stay on long enough that your people are actually using it, then we get out of the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOFTWARE THING -->
+  <section class="reveal glass-card rounded-3xl p-8 md:p-10">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">We're not selling you software</h2>
+    <p class="text-gray-400 mb-4">
+      This is the part that makes us different from most of what you'll see in
+      your feed. There's no CoGrow platform, no seat license, no annual contract.
+    </p>
+    <p class="text-gray-400 mb-4">
+      If you already pay for ChatGPT or Claude, we use it. If you don't have
+      anything, a twenty dollar a month subscription covers what most small
+      businesses need to start. You own the accounts. If you fire us tomorrow,
+      everything we set up keeps running.
+    </p>
+    <p class="text-gray-400">
+      What you pay us for is figuring out what to build and then building it.
+    </p>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="reveal">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">The kind of thing we set up</h2>
+    <p class="text-gray-400 mb-8">Not a menu. Just examples of where this usually lands for a small business.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">request_quote</span>
+        <p class="text-gray-300 text-sm">Drafting the quote or the estimate so you're editing something instead of starting from a blank page.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">forum</span>
+        <p class="text-gray-300 text-sm">Answering the same handful of customer questions that come in every week, in your words.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">voicemail</span>
+        <p class="text-gray-300 text-sm">Turning missed calls and voicemails into a written summary in your inbox, with what they wanted.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">receipt_long</span>
+        <p class="text-gray-300 text-sm">Chasing the invoice that's forty days out, politely, without you remembering to do it.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">description</span>
+        <p class="text-gray-300 text-sm">Paperwork and reports that eat an afternoon a week and nobody wants to do.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <span class="material-icons text-white/40 mb-3">school</span>
+        <p class="text-gray-300 text-sm">Sitting with your team for an afternoon so they stop being scared of it and start using it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="reveal">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Who you'd actually be talking to</h2>
+    <p class="text-gray-400 mb-4">
+      CoGrow is three people. I'm in Boston, my partners are in Chicago and New
+      York. There is no account manager and no offshore team. Book a call and
+      you get one of us.
+    </p>
+    <p class="text-gray-400 mb-4">
+      We work with small businesses because that's the work we like and it's
+      where this stuff makes the biggest difference. A tool that saves a
+      four-person shop six hours a week is a bigger deal than the same tool at a
+      company with a thousand employees.
+    </p>
+    <p class="text-gray-400">
+      We'd rather tell you in twenty minutes that there's nothing here for you
+      than take money for something that won't help.
+    </p>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="reveal scroll-mt-8">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Grab a time</h2>
+    <p class="text-gray-400 mb-8">Thirty minutes, free, no obligation. Pick whatever slot works.</p>
+
+    <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0e3325] mb-10" style="min-height: 700px;">
+      <iframe
+        src="https://cal.com/cogrowai/freeaudit?embed=true&theme=dark"
+        width="100%"
+        height="700"
+        frameborder="0"
+        style="border-radius: 1rem;"
+        title="Book a free call with CoGrow"
+        onload="fbq && fbq('trackCustom', 'CalendarLoaded')"
+      ></iframe>
+    </div>
+
+    <!--
+      ============================================================
+      FALLBACK FORM — for people who won't book a calendar slot
+      cold. This catches maybe a third of the leads a calendar
+      embed alone would lose.
+
+      BEFORE LAUNCH: create a form endpoint and paste it into the
+      action below. Formspree (formspree.io) is the fastest option,
+      free tier is fine at this volume. Right now it points at a
+      placeholder and will NOT deliver anything.
+      ============================================================
+    -->
+    <div class="glass-card rounded-3xl p-8">
+      <h3 class="text-xl font-bold mb-2">Not ready to book a time?</h3>
+      <p class="text-gray-400 text-sm mb-6">Leave your info and we'll reach out. Same conversation, just on your schedule.</p>
+
+      <form id="lead-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="flex flex-col gap-4">
+        <input type="hidden" name="_subject" value="CoGrow FB ad lead"/>
+        <input type="hidden" name="source" value="fb-ad-ai-starter"/>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2" for="name">Your name</label>
+            <input class="w-full bg-surface-darker border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-white/30 focus:ring-0" id="name" name="name" required type="text"/>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2" for="business">Business name</label>
+            <input class="w-full bg-surface-darker border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-white/30 focus:ring-0" id="business" name="business" type="text"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2" for="email">Email</label>
+            <input class="w-full bg-surface-darker border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-white/30 focus:ring-0" id="email" name="email" required type="email"/>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2" for="phone">Phone</label>
+            <input class="w-full bg-surface-darker border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-white/30 focus:ring-0" id="phone" name="phone" type="tel"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2" for="message">What eats the most time in your week? (optional)</label>
+          <textarea class="w-full bg-surface-darker border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-white/30 focus:ring-0" id="message" name="message" rows="3"></textarea>
+        </div>
+
+        <button class="bg-white text-[#08251b] px-6 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all self-start" type="submit">
+          Send it over
+        </button>
+      </form>
+
+      <p id="form-status" class="text-sm text-gray-400 mt-4 hidden"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full max-w-3xl mx-auto px-6 py-10 border-t border-white/5 text-sm text-gray-500 flex flex-wrap gap-4 justify-between">
+  <span>CoGrow AI LLC</span>
+  <span>Boston. Chicago. New York.</span>
+  <a class="hover:text-white" href="/privacy.html">Privacy</a>
+</footer>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Fire the Meta Lead event and submit without leaving the page
+  const form = document.getElementById('lead-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (!res.ok) throw new Error('Form endpoint returned ' + res.status);
+
+      if (window.fbq) fbq('track', 'Lead');
+      form.classList.add('hidden');
+      status.textContent = "Got it. We'll be in touch within one business day.";
+      status.classList.remove('hidden');
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Send it over';
+      // TODO: swap YOUR_EMAIL_HERE for the real CoGrow inbox before launch.
+      status.textContent = "That didn't go through. Email us at YOUR_EMAIL_HERE and we'll pick it up from there.";
+      status.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -24,12 +24,23 @@
  extend: {
  colors: {
  primary: "#ffffff",
- "background-light": "#f3f4f6",
- "background-dark": "#0a0a0a",
- "surface-dark": "#141414",
- "surface-darker": "#1a1a1a",
- "border-dark": "#2a2a2a",
- "text-muted": "#888888",
+ "background-light": "#f4f8f5",
+ "background-dark": "#08251b",
+ "surface-dark": "#0e3325",
+ "surface-darker": "#0b2c20",
+ "border-dark": "#1b4a37",
+ "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
  },
  fontFamily: {
  display: ["Inter", "sans-serif"],
@@ -69,7 +80,7 @@
 <style>
  body {
  font-family: 'Inter', sans-serif;
- background-color: #0a0a0a;
+ background-color: #08251b;
  color: #ffffff;
  overflow-x: hidden;
  }
@@ -78,7 +89,7 @@
  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
  }
  .glass-card {
- background: rgba(20, 20, 20, 0.6);
+ background: rgba(11, 44, 32, 0.62);
  backdrop-filter: blur(10px);
  border: 1px solid rgba(255, 255, 255, 0.1);
  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -137,14 +148,14 @@
  pointer-events: none;
  }
  .gradient-text {
- background: linear-gradient(to right, #fff 20%, #666 100%);
+ background: linear-gradient(to right, #fff 20%, #74ad93 100%);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
  }
  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-white top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
 <div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
 <nav class="w-full max-w-6xl mx-auto px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
 <div class="flex items-center gap-2 group cursor-pointer">
@@ -161,7 +172,7 @@
     <a class="nav-link hover:text-white" href="/contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
+<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
 </div>
 </nav>
 <main class="w-full max-w-6xl mx-auto px-6 flex flex-col gap-32 pb-32 pt-16">
@@ -176,7 +187,7 @@
 <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">We help small and mid-sized<br/>businesses put AI to work.</h1>
 <p class="text-lg text-gray-400 mb-10 max-w-md">We do two things. We build the online presence that gets you found and booked, and we set up AI inside your business so your team gets more done with the people you already have.</p>
 <div class="flex flex-wrap items-center gap-4">
-<a href="/book.html" class="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-all bubbly-hover shadow-xl shadow-white/10">
+<a href="/book.html" class="bg-white text-[#08251b] px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-all bubbly-hover shadow-xl shadow-white/10">
  Book a Free Audit
  <span class="material-icons text-sm">arrow_forward</span>
 </a>
@@ -276,7 +287,7 @@
 <p class="text-xl text-gray-300">Then we put AI on the repetitive work like paperwork, follow-up, and reporting, so you <span class="text-white font-semibold">grow without adding staff.</span></p>
 </div>
 </div>
-<a href="/solutions.html" class="bg-white text-black px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">
+<a href="/solutions.html" class="bg-white text-[#08251b] px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">
  See How It Works
  </a>
 </div>
@@ -450,8 +461,8 @@ function toggleFaq(btn) {
 </div>
 <p class="text-sm text-gray-400 mb-6">Technology consultants for small and mid-sized businesses. AI is usually how we do it. Not always.</p>
 <div class="flex gap-2">
-<input class="bg-black border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-white/50 transition-all flex-1" placeholder="Enter your email" type="email"/>
-<button class="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium bubbly-hover">Subscribe</button>
+<input class="bg-[#051a12] border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-white/50 transition-all flex-1" placeholder="Enter your email" type="email"/>
+<button class="bg-white text-[#08251b] px-4 py-2 rounded-lg text-sm font-medium bubbly-hover">Subscribe</button>
 </div>
 </div>
 <div class="flex gap-16">

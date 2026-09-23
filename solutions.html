@@ -14,12 +14,23 @@
  extend: {
  colors: {
  primary: "#ffffff",
- "background-light": "#f3f4f6",
- "background-dark": "#0a0a0a",
- "surface-dark": "#141414",
- "surface-darker": "#1a1a1a",
- "border-dark": "#2a2a2a",
- "text-muted": "#888888",
+ "background-light": "#f4f8f5",
+ "background-dark": "#08251b",
+ "surface-dark": "#0e3325",
+ "surface-darker": "#0b2c20",
+ "border-dark": "#1b4a37",
+ "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
  },
  fontFamily: { display: ["Inter", "sans-serif"] },
  borderRadius: { DEFAULT: "0.75rem" },
@@ -40,9 +51,9 @@
  };
  </script>
 <style>
- body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; }
+ body { font-family: 'Inter', sans-serif; background-color: #08251b; color: #ffffff; overflow-x: hidden; }
  .grid-bg { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px); }
- .glass-card { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+ .glass-card { background: rgba(11, 44, 32, 0.62); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
  .glass-card:hover { transform: translateY(-8px) scale(1.02); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.05); }
  .bubbly-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
  .bubbly-hover:hover { transform: scale(1.05); filter: brightness(1.1); }
@@ -52,11 +63,11 @@
  .reveal { opacity: 0; transform: translateY(30px) scale(0.95); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
  .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
  .bg-orb { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; pointer-events: none; opacity: 0.15; }
- .gradient-text { background: linear-gradient(to right, #fff 20%, #666 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ .gradient-text { background: linear-gradient(to right, #fff 20%, #74ad93 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
  </style>
 </head>
 <body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-white top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
 <div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
 <div class="fixed pointer-events-none z-0" style="top: 20%; left: 15%; opacity: 0.15;">
 <svg class="w-16 h-16 text-white animate-pulse-slow" viewBox="0 0 100 100"><path d="M50 0 L55 45 L100 50 L55 55 L50 100 L45 55 L0 50 L45 45 Z" fill="currentColor"></path></svg>
@@ -80,7 +91,7 @@
 <a class="nav-link hover:text-white" href="/contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
+<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
 </div>
 </nav>
 
@@ -120,7 +131,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-4"><span class="material-icons text-xs">web</span> On-ramp</div>
 <h2 class="text-4xl font-bold tracking-tight mb-4">Website</h2>
 <p class="text-gray-400 mb-6">A professional site that actually books jobs. If you just need the site, start here.</p>
-<a href="/book.html" class="inline-block bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
+<a href="/book.html" class="inline-block bg-white text-[#08251b] px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
 </div>
 
 <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
@@ -150,14 +161,14 @@
 <section class="reveal">
 <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden border border-white/20 shadow-xl shadow-white/5">
 <div class="absolute top-0 right-0 w-60 h-60 bg-gradient-radial from-white/10 to-transparent -z-0"></div>
-<div class="absolute top-4 right-4 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full z-10">MOST POPULAR</div>
+<div class="absolute top-4 right-4 bg-white text-[#08251b] text-[10px] font-bold px-3 py-1 rounded-full z-10">MOST POPULAR</div>
 <div class="relative z-10 grid md:grid-cols-3 gap-10">
 
 <div class="md:col-span-1">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-4"><span class="material-icons text-xs">rocket_launch</span> Foundation</div>
 <h2 class="text-4xl font-bold tracking-tight mb-4">Start Here</h2>
 <p class="text-gray-400 mb-6">The full foundation. Your website plus everything you need to get found, get booked, and look the part online. Live in about two weeks.</p>
-<a href="/book.html" class="inline-block bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
+<a href="/book.html" class="inline-block bg-white text-[#08251b] px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
 </div>
 
 <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
@@ -197,7 +208,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-4"><span class="material-icons text-xs">trending_up</span> Ongoing</div>
 <h2 class="text-4xl font-bold tracking-tight mb-4">Ranked Plan</h2>
 <p class="text-gray-400 mb-6">Start Here gets you ranked. Ranked Plan keeps you there. Staying on top of Google is daily work, so we do it for you instead of letting you slip after the first few months.</p>
-<a href="/book.html" class="inline-block bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
+<a href="/book.html" class="inline-block bg-white text-[#08251b] px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10">Book a Free Audit</a>
 </div>
 
 <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
@@ -244,7 +255,7 @@
 <p class="text-gray-400 mb-6">Your business runs on a handful of tools that don't talk to each other. We connect them and put AI on the jobs that depend on them. Everything gets drafted in your voice and a person approves it before it goes out.</p>
 <p class="text-gray-400 mb-6">What we build depends on what's slowing you down. Book a free call and we'll scope it together.</p>
 <div class="flex flex-col gap-3">
-<a href="/book.html" class="inline-block bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10 text-center">Book a Free Audit</a>
+<a href="/book.html" class="inline-block bg-white text-[#08251b] px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-all shadow-lg shadow-white/10 text-center">Book a Free Audit</a>
 <a href="/workflows.html" class="inline-flex items-center justify-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">See full details <span class="material-icons text-sm">arrow_forward</span></a>
 </div>
 </div>
@@ -277,7 +288,7 @@
 <div class="glass-card p-12 rounded-3xl">
 <h2 class="text-3xl md:text-4xl font-bold mb-4">Not Sure Which Fits?</h2>
 <p class="text-gray-400 mb-8 max-w-lg mx-auto">Book a free audit. We'll show you what's leaking leads today and recommend exactly what to fix first.</p>
-<a href="/book.html" class="bg-white text-black px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">Book a Free Audit</a>
+<a href="/book.html" class="bg-white text-[#08251b] px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">Book a Free Audit</a>
 </div>
 </section>
 

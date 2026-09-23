@@ -22,12 +22,23 @@
  extend: {
  colors: {
  primary: "#ffffff",
- "background-light": "#f3f4f6",
- "background-dark": "#0a0a0a",
- "surface-dark": "#141414",
- "surface-darker": "#1a1a1a",
- "border-dark": "#2a2a2a",
- "text-muted": "#888888",
+ "background-light": "#f4f8f5",
+ "background-dark": "#08251b",
+ "surface-dark": "#0e3325",
+ "surface-darker": "#0b2c20",
+ "border-dark": "#1b4a37",
+ "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
  },
  fontFamily: { display: ["Inter", "sans-serif"] },
  borderRadius: { DEFAULT: "0.75rem" },
@@ -48,9 +59,9 @@
  };
  </script>
 <style>
- body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; overflow-x: hidden; }
+ body { font-family: 'Inter', sans-serif; background-color: #08251b; color: #ffffff; overflow-x: hidden; }
  .grid-bg { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px); }
- .glass-card { background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+ .glass-card { background: rgba(11, 44, 32, 0.62); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
  .glass-card:hover { transform: translateY(-8px) scale(1.02); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.05); }
  .bubbly-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
  .bubbly-hover:hover { transform: scale(1.05); filter: brightness(1.1); }
@@ -60,13 +71,13 @@
  .reveal { opacity: 0; transform: translateY(30px) scale(0.95); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
  .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
  .bg-orb { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; pointer-events: none; opacity: 0.15; }
- .gradient-text { background: linear-gradient(to right, #fff 20%, #666 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
- .hub-node { background: #0a0a0a; color: #fff; border: 2px solid #22c55e; box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12); }
+ .gradient-text { background: linear-gradient(to right, #fff 20%, #74ad93 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+ .hub-node { background: #08251b; color: #fff; border: 2px solid #22c55e; box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12); }
  .tool-node { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; }
  </style>
 </head>
 <body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-white top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
 <div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
 
 <nav class="w-full max-w-6xl mx-auto px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
@@ -84,7 +95,7 @@
 <a class="nav-link hover:text-white" href="/contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
+<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
 </div>
 </nav>
 
@@ -102,7 +113,7 @@
 <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">We help small and mid-sized businesses<br/><span class="gradient-text">put AI to work.</span></h1>
 <p class="text-lg text-gray-400 mb-10 max-w-md">There are two ways to start. If customers can't find you online, we get you found and get you booked. If you run a bigger team, we put AI on the repetitive jobs that eat your week.</p>
 <div class="flex flex-wrap items-center gap-4">
-<a href="/book.html" class="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-all bubbly-hover shadow-xl shadow-white/10">
+<a href="/book.html" class="bg-white text-[#08251b] px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-all bubbly-hover shadow-xl shadow-white/10">
  Book a free call
  <span class="material-icons text-sm">arrow_forward</span>
 </a>
@@ -304,7 +315,7 @@
 <div class="glass-card p-12 rounded-3xl">
 <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to put AI to work?</h2>
 <p class="text-gray-400 mb-8 max-w-lg mx-auto">Book a free 30-minute call. We'll learn how you run things and tell you the one job worth handing off first.</p>
-<a href="/book.html" class="bg-white text-black px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">Book a free call</a>
+<a href="/book.html" class="bg-white text-[#08251b] px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">Book a free call</a>
 </div>
 </section>
 

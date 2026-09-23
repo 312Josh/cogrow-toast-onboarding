@@ -22,12 +22,23 @@
  extend: {
  colors: {
  primary: "#ffffff",
- "background-light": "#f3f4f6",
- "background-dark": "#0a0a0a",
- "surface-dark": "#141414",
- "surface-darker": "#1a1a1a",
- "border-dark": "#2a2a2a",
- "text-muted": "#888888",
+ "background-light": "#f4f8f5",
+ "background-dark": "#08251b",
+ "surface-dark": "#0e3325",
+ "surface-darker": "#0b2c20",
+ "border-dark": "#1b4a37",
+ "text-muted": "#9dbdac",
+          gray: {
+            100: "#eef5f1",
+            200: "#dbe9e2",
+            300: "#c3d8cd",
+            400: "#a3c0b1",
+            500: "#7fa392",
+            600: "#5c8271",
+            700: "#3f6354",
+            800: "#26473a",
+            900: "#123024",
+          },
  },
  fontFamily: {
  display: ["Inter", "sans-serif"],
@@ -67,7 +78,7 @@
 <style>
  body {
  font-family: 'Inter', sans-serif;
- background-color: #0a0a0a;
+ background-color: #08251b;
  color: #ffffff;
  overflow-x: hidden;
  }
@@ -76,7 +87,7 @@
  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
  }
  .glass-card {
- background: rgba(20, 20, 20, 0.6);
+ background: rgba(11, 44, 32, 0.62);
  backdrop-filter: blur(10px);
  border: 1px solid rgba(255, 255, 255, 0.1);
  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -135,14 +146,14 @@
  pointer-events: none;
  }
  .gradient-text {
- background: linear-gradient(to right, #fff 20%, #666 100%);
+ background: linear-gradient(to right, #fff 20%, #74ad93 100%);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
  }
  </style>
 </head>
 <body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-white top-[-10%] left-[-10%] animate-orb-float"></div>
+<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
 <div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
 <!-- Floating stars -->
 <div class="fixed pointer-events-none z-0" style="top: 20%; left: 15%; opacity: 0.15;">
@@ -174,7 +185,7 @@
     <a class="nav-link hover:text-white" href="/contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
+<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
 </div>
 </nav>
 <main class="w-full max-w-3xl mx-auto px-6 pb-32 pt-16">
@@ -226,70 +237,70 @@
 
 <div class="glass-card rounded-2xl p-6">
 <div class="flex items-center gap-3 mb-3">
-<span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+<span class="bg-white text-[#08251b] w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
 <div>
 <h3 class="font-bold text-white text-lg">Instant Response</h3>
 <p class="text-xs text-gray-500">Within 1 minute &bull; SMS</p>
 </div>
 </div>
 <p class="text-gray-300">A text message acknowledging their inquiry and asking one qualifying question. Keep it short, personal, and end with a question to start a conversation.</p>
-<div class="mt-3 bg-black/30 rounded-xl p-4 text-sm text-gray-400 italic">
+<div class="mt-3 bg-[#051a12]/60 rounded-xl p-4 text-sm text-gray-400 italic">
 "Hi [Name], thanks for reaching out to [Business]. I'd love to help — can you tell me a bit about what you're looking for so I can point you to the right person?"
 </div>
 </div>
 
 <div class="glass-card rounded-2xl p-6">
 <div class="flex items-center gap-3 mb-3">
-<span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+<span class="bg-white text-[#08251b] w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
 <div>
 <h3 class="font-bold text-white text-lg">Value-Add Follow-Up</h3>
 <p class="text-xs text-gray-500">24 hours later &bull; Email</p>
 </div>
 </div>
 <p class="text-gray-300">Don't just say "checking in." Send something useful — a relevant tip, a link to a helpful resource, or a quick piece of advice related to their inquiry. Position yourself as the expert, not a pest.</p>
-<div class="mt-3 bg-black/30 rounded-xl p-4 text-sm text-gray-400 italic">
+<div class="mt-3 bg-[#051a12]/60 rounded-xl p-4 text-sm text-gray-400 italic">
 "Hi [Name], I put together a quick checklist of [relevant topic] that might help while you're evaluating options. [Link] — Happy to walk through any of this if you'd like to chat."
 </div>
 </div>
 
 <div class="glass-card rounded-2xl p-6">
 <div class="flex items-center gap-3 mb-3">
-<span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+<span class="bg-white text-[#08251b] w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
 <div>
 <h3 class="font-bold text-white text-lg">Direct Ask</h3>
 <p class="text-xs text-gray-500">Day 3 &bull; SMS</p>
 </div>
 </div>
 <p class="text-gray-300">A short, direct text with a specific time offer. Make it easy to say yes by removing the decision friction.</p>
-<div class="mt-3 bg-black/30 rounded-xl p-4 text-sm text-gray-400 italic">
+<div class="mt-3 bg-[#051a12]/60 rounded-xl p-4 text-sm text-gray-400 italic">
 "Hey [Name], I have a few openings this week if you'd like to get this taken care of. Would [Day] morning or afternoon work better?"
 </div>
 </div>
 
 <div class="glass-card rounded-2xl p-6">
 <div class="flex items-center gap-3 mb-3">
-<span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+<span class="bg-white text-[#08251b] w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
 <div>
 <h3 class="font-bold text-white text-lg">Social Proof</h3>
 <p class="text-xs text-gray-500">Day 7 &bull; Email</p>
 </div>
 </div>
 <p class="text-gray-300">Share a testimonial, case study, or before/after from a similar client. Let someone else do the selling for you.</p>
-<div class="mt-3 bg-black/30 rounded-xl p-4 text-sm text-gray-400 italic">
+<div class="mt-3 bg-[#051a12]/60 rounded-xl p-4 text-sm text-gray-400 italic">
 "Hi [Name], wanted to share a quick story — we helped [similar client type] with [similar problem] last month and [specific result]. If you're still looking for help with this, I'd love to do the same for you."
 </div>
 </div>
 
 <div class="glass-card rounded-2xl p-6">
 <div class="flex items-center gap-3 mb-3">
-<span class="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">5</span>
+<span class="bg-white text-[#08251b] w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">5</span>
 <div>
 <h3 class="font-bold text-white text-lg">Break-Up Message</h3>
 <p class="text-xs text-gray-500">Day 14 &bull; SMS</p>
 </div>
 </div>
 <p class="text-gray-300">The "last chance" message. Let them know you're closing out the inquiry. This creates urgency without pressure — and surprisingly, it gets the highest response rate of any touch in the sequence.</p>
-<div class="mt-3 bg-black/30 rounded-xl p-4 text-sm text-gray-400 italic">
+<div class="mt-3 bg-[#051a12]/60 rounded-xl p-4 text-sm text-gray-400 italic">
 "Hi [Name], I don't want to keep bugging you so this will be my last message. If you ever need help with [service], we're here. Just reply to this text anytime."
 </div>
 </div>
@@ -321,7 +332,7 @@
 <div class="glass-card rounded-2xl p-8 my-12 text-center">
 <h3 class="text-xl font-bold text-white mb-3">Want this sequence running for your business by next week?</h3>
 <p class="text-gray-400 mb-6">We'll build a custom 5-touch follow-up sequence for your industry and set it up to run automatically. No more leads going cold.</p>
-<a href="/book.html" class="bg-white text-black px-8 py-3 rounded-full font-bold bubbly-hover shadow-xl shadow-white/10 inline-block">Book a Free Audit</a>
+<a href="/book.html" class="bg-white text-[#08251b] px-8 py-3 rounded-full font-bold bubbly-hover shadow-xl shadow-white/10 inline-block">Book a Free Audit</a>
 </div>
 
 </div>
