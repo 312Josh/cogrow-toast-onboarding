@@ -1,365 +1,115 @@
-<!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<meta property="og:image" content="https://cogrow.ai/logo.svg"/>
-<meta property="og:title" content="What We Build — CoGrow AI"/>
-<meta property="og:description" content="We help small and mid-sized businesses put AI to work. Two ways to start: get found and get booked, or put AI to work inside the business."/>
-<meta property="og:url" content="https://cogrow.ai/workflows.html"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:image" content="https://cogrow.ai/logo.svg"/>
-<meta name="description" content="We help small and mid-sized businesses put AI to work. Two ways to start: get found and get booked online, or put AI to work on the repetitive jobs inside a bigger team."/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>What We Build — CoGrow AI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<script>
- tailwind.config = {
- darkMode: "class",
- theme: {
- extend: {
- colors: {
- primary: "#ffffff",
- "background-light": "#f4f8f5",
- "background-dark": "#08251b",
- "surface-dark": "#0e3325",
- "surface-darker": "#0b2c20",
- "border-dark": "#1b4a37",
- "text-muted": "#9dbdac",
-          gray: {
-            100: "#eef5f1",
-            200: "#dbe9e2",
-            300: "#c3d8cd",
-            400: "#a3c0b1",
-            500: "#7fa392",
-            600: "#5c8271",
-            700: "#3f6354",
-            800: "#26473a",
-            900: "#123024",
-          },
- },
- fontFamily: { display: ["Inter", "sans-serif"] },
- borderRadius: { DEFAULT: "0.75rem" },
- backgroundImage: { 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))' },
- animation: {
- 'float': 'float 6s ease-in-out infinite',
- 'orb-float': 'orb-float 20s infinite alternate linear',
- 'bubble-up': 'bubble-up 10s infinite ease-in-out',
- 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
- },
- keyframes: {
- float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
- 'orb-float': { '0%': { transform: 'translate(0, 0) scale(1)' }, '50%': { transform: 'translate(10%, 10%) scale(1.1)' }, '100%': { transform: 'translate(-5%, 5%) scale(0.9)' } },
- 'bubble-up': { '0%': { transform: 'translateY(100vh) scale(0)', opacity: '0' }, '50%': { opacity: '0.2' }, '100%': { transform: 'translateY(-20vh) scale(1.5)', opacity: '0' } }
- }
- },
- },
- };
- </script>
-<style>
- body { font-family: 'Inter', sans-serif; background-color: #08251b; color: #ffffff; overflow-x: hidden; }
- .grid-bg { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px); }
- .glass-card { background: rgba(11, 44, 32, 0.62); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
- .glass-card:hover { transform: translateY(-8px) scale(1.02); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.05); }
- .bubbly-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
- .bubbly-hover:hover { transform: scale(1.05); filter: brightness(1.1); }
- .nav-link { transition: all 0.3s ease; position: relative; }
- .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 50%; width: 0; height: 2px; background: white; transition: all 0.3s ease; transform: translateX(-50%); border-radius: 2px; }
- .nav-link:hover::after { width: 100%; }
- .reveal { opacity: 0; transform: translateY(30px) scale(0.95); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
- .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
- .bg-orb { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; pointer-events: none; opacity: 0.15; }
- .gradient-text { background: linear-gradient(to right, #fff 20%, #74ad93 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
- .hub-node { background: #08251b; color: #fff; border: 2px solid #22c55e; box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12); }
- .tool-node { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; }
- </style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workflows — CoGrow</title>
+<meta name="description" content="We connect the tools your team already uses and put AI on the jobs that eat your week.">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-background-dark text-white antialiased min-h-screen flex flex-col items-center">
-<div class="bg-orb w-[600px] h-[600px] bg-[#3ddc97] top-[-10%] left-[-10%] animate-orb-float"></div>
-<div class="bg-orb w-[400px] h-[400px] bg-gray-500 bottom-[10%] right-[-5%] animate-orb-float" style="animation-delay: -5s;"></div>
+<body>
 
-<nav class="w-full max-w-6xl mx-auto px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
-<a href="/" class="flex items-center gap-2 group cursor-pointer">
-<span class="material-icons text-white transition-transform group-hover:rotate-12">bubble_chart</span>
-<span class="font-bold text-xl tracking-tight">CoGrow</span>
-</a>
-<div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-<a class="nav-link hover:text-white" href="/">Home</a>
-<a class="nav-link hover:text-white" href="/about.html">About</a>
-<a class="nav-link hover:text-white" href="/solutions.html">Solutions</a>
-<a class="nav-link text-white" href="/workflows.html">What We Build</a>
-<a class="nav-link hover:text-white" href="/resources.html">Resources</a>
-<a class="nav-link hover:text-white" href="/blog/index.html">Blog</a>
-<a class="nav-link hover:text-white" href="/contact.html">Contact</a>
-</div>
-<div class="flex items-center gap-4 text-sm">
-<a class="bg-white text-[#08251b] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-all bubbly-hover shadow-lg shadow-white/5" href="/book.html">Book a Call</a>
-</div>
+<header class="head">
+  <div class="wrap" style="position:relative">
+    <a class="brand" href="index.html"><i><b></b><b></b><b></b></i>CoGrow</a>
+    <input type="checkbox" id="mt"><label for="mt" class="mbtn">Menu</label>
+    <ul class="nav">
+      <li><a href="websites.html">Websites</a></li>
+      <li><a href="workflows.html" aria-current="page">Workflows</a></li>
+      <li><a href="ai-training.html">AI Training</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#people">About</a></li>
+      <li><a class="btn" href="/book">Book a call</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+
+<section class="phero">
+  <div class="wrap">
+    <p class="mono dim kick">02 · Workflows</p>
+    <h1>Take the busywork off your <span class="lime">team.</span></h1>
+    <div class="lede">
+      <p>Every team has a few jobs that come back every week and eat an afternoon each time. We connect the tools you already use and put AI on those jobs. A person on your team still approves the work before it goes out.</p>
+      <a class="btn" href="/book">Book a free call →</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap split">
+    <div><h2>What we put AI on</h2><p class="sub">These are common ones. The first call is where we find yours.</p></div>
+    <ul class="items"><li><span class="k">01</span><h3>Estimates and quotes</h3><p>Someone walks the job and gives the details, and AI drafts the estimate and the write-up. Your team edits a draft instead of starting from a blank page.</p></li><li><span class="k">02</span><h3>Job notes into paperwork</h3><p>Photos and a few notes from the field become the invoice, the work order and the record. No retyping at the end of the day.</p></li><li><span class="k">03</span><h3>Fast replies to new leads</h3><p>A call or form comes in and the right person hears about it right away. The customer gets a real answer instead of waiting until tomorrow.</p></li><li><span class="k">04</span><h3>One weekly report</h3><p>Every Monday you get a plain-English summary: jobs done, money in, and where things got stuck. Nobody has to chase numbers.</p></li><li><span class="k">05</span><h3>Chasing unpaid invoices</h3><p>Polite reminders go out on schedule, in your voice, without anyone having to remember.</p></li><li><span class="k">06</span><h3>What your senior people know</h3><p>The fixes and shortcuts that live in one person's head get written down somewhere the whole team can ask.</p></li></ul>
+  </div>
+</section>
+
+<section class="paper own">
+  <div class="wrap">
+    <p class="mono dim" style="margin-bottom:22px">How we build it</p>
+    <h2>It fits your business. Not the other way around.</h2>
+    <div class="cols">
+      <div><h3>Your tools</h3><p>You don't switch to a new platform. We connect what you already pay for, like your email, CRM, accounting and shared drive.</p></div>
+      <div><h3>Your voice</h3><p>Anything that goes to a customer reads like your team wrote it, because it learns from your real emails and documents.</p></div>
+      <div><h3>Your call</h3><p>Nothing runs on autopilot. A person sees the work and approves it before anything goes out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head"><h2>A recent build</h2><span class="mono dim">Real estate</span></div>
+    <div class="feature">
+      <a href="https://newharborhomes.cogrow.ai" target="_blank" rel="noopener" class="shot" style="box-shadow:10px 10px 0 #3f8f6a"><img src="img/newharbor.jpg" alt="Underwriting app deal list"></a>
+      <div>
+        <span class="mono dim">Multifamily investor</span>
+        <h3>Deal underwriting, from the broker's PDF</h3>
+        <p>An investor was building every deal model by hand in a spreadsheet. Now they drop in the broker's offering memo. The app reads it, fills in the model against their own return targets, flags pass or pursue, and drafts the memo and a letter of intent.</p>
+        <p>Someone still reads every deal and makes the call. They just start from a finished draft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head"><h2>How it goes</h2><span class="mono dim">Priced per job, after the first call</span></div>
+    <ol>
+      <li><div class="n">1</div><h3>Free first call</h3><p>30 minutes. We learn how you run things and where the repeat work piles up.</p></li>
+      <li><div class="n">2</div><h3>A one-page plan</h3><p>We pick the one or two jobs that save the most time the fastest, and tell you what each costs.</p></li>
+      <li><div class="n">3</div><h3>Build, then keep it running</h3><p>A few weeks per job. You review the output before it goes live, and we keep it working as things change.</p></li>
+    </ol>
+  </div>
+</section>
+
+<nav class="next">
+  <a href="websites.html"><span class="mono dim">← Also</span><div class="t">Websites</div></a>
+  <a href="ai-training.html"><span class="mono dim">Also →</span><div class="t">AI Training</div></a>
 </nav>
 
-<main class="w-full max-w-6xl mx-auto px-6 flex flex-col gap-24 pb-32 pt-16">
-
-<!-- Hero -->
-<section class="relative grid-bg rounded-3xl overflow-hidden border border-white/5 p-8 md:p-16 reveal active">
-<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-radial from-white/5 to-transparent rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3"></div>
-<div class="flex flex-col md:flex-row items-start gap-12 relative z-10">
-<div class="flex-1 max-w-xl">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-8 animate-float">
-<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
- What We Build
- </div>
-<h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">We help small and mid-sized businesses<br/><span class="gradient-text">put AI to work.</span></h1>
-<p class="text-lg text-gray-400 mb-10 max-w-md">There are two ways to start. If customers can't find you online, we get you found and get you booked. If you run a bigger team, we put AI on the repetitive jobs that eat your week.</p>
-<div class="flex flex-wrap items-center gap-4">
-<a href="/book.html" class="bg-white text-[#08251b] px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-all bubbly-hover shadow-xl shadow-white/10">
- Book a free call
- <span class="material-icons text-sm">arrow_forward</span>
-</a>
-<a href="#how-it-works" class="bg-surface-darker border border-white/10 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-all bubbly-hover">
- How It Works
- <span class="material-icons text-sm">south</span>
-</a>
-</div>
-</div>
-<!-- Diagram: fragmented tools converging on CoGrow AI hub -->
-<div class="hidden md:block relative w-[360px] h-[280px]">
-<svg class="absolute inset-0 w-full h-full" viewBox="0 0 360 280" preserveAspectRatio="none">
-<line x1="50" y1="50" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="30" y1="140" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="50" y1="230" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="180" y1="30" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="180" y1="250" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="310" y1="50" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="330" y1="140" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-<line x1="310" y1="230" x2="180" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
-</svg>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:32px;top:32px;width:36px;height:36px;font-size:11px;font-weight:700;">CRM</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:12px;top:122px;width:36px;height:36px;font-size:11px;font-weight:700;">$$</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:32px;top:212px;width:36px;height:36px;font-size:11px;font-weight:700;">★</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:162px;top:12px;width:36px;height:36px;font-size:11px;font-weight:700;">@</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:162px;top:232px;width:36px;height:36px;font-size:11px;font-weight:700;">▦</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:292px;top:32px;width:36px;height:36px;font-size:11px;font-weight:700;">DB</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:312px;top:122px;width:36px;height:36px;font-size:11px;font-weight:700;">⚙</div>
-<div class="tool-node absolute rounded-lg flex items-center justify-center" style="left:292px;top:212px;width:36px;height:36px;font-size:11px;font-weight:700;">✉</div>
-<div class="hub-node absolute rounded-full px-5 py-3 font-bold text-sm" style="left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;">CoGrow AI</div>
-</div>
-</div>
+<section class="close">
+  <div class="wrap">
+    <h2>What eats your week?<br><span class="lime">Let's start there.</span></h2>
+    <p>Book a free call and we'll tell you the one job worth handing off first.</p>
+    <a class="btn" href="/book">Book a free call →</a>
+  </div>
 </section>
-
-<!-- Why now? -->
-<section class="reveal">
-<div class="max-w-3xl">
-<div class="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
-<span class="material-icons text-xs">route</span>
- Two ways to start
- </div>
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-gray-200">Pick the path that fits<br/><span class="text-white">where you are.</span></h2>
-<div class="space-y-5 text-lg text-gray-300">
-<p><span class="text-white font-semibold">Get found and get booked.</span> If customers can't find you online, we fix that. We build your website, set up your Google listing, and make sure new leads get a fast reply, so people find you first and book you.</p>
-<p><span class="text-white font-semibold">Put AI to work inside the business.</span> For bigger teams, we put AI on the repetitive jobs that eat your week: estimating, paperwork, reporting, capturing what your veterans know, and training people on the job.</p>
-<p>Not sure which one you need? Book a call and we'll tell you straight.</p>
-</div>
-</div>
-</section>
-
-<!-- What we build -->
-<section class="reveal">
-<div class="max-w-2xl mb-12">
-<div class="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
-<span class="material-icons text-xs">construction</span>
- What we build
- </div>
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gray-200">Inside a bigger team,<br/><span class="text-white">here's what AI takes off your plate.</span></h2>
-<p class="text-gray-400 text-lg">Picture a 100-person HVAC shop. Same repetitive jobs eat the week. Here's the kind of work we put AI on.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">trending_up</span></div>
-<h3 class="text-xl font-bold mb-2">We write up your estimates</h3>
-<p class="text-sm text-gray-400">A tech walks the job, gives the details, and AI builds the estimate. Your guys spend less time at a keyboard and more time on the next call.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">receipt_long</span></div>
-<h3 class="text-xl font-bold mb-2">We turn job photos and notes into the paperwork</h3>
-<p class="text-sm text-gray-400">Photos from the truck and a few notes become the invoice, the work order, and the warranty record. No retyping at the end of the day.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">forum</span></div>
-<h3 class="text-xl font-bold mb-2">New leads get a fast reply</h3>
-<p class="text-sm text-gray-400">A call comes in or a form gets filled out and the right person hears about it right away. The customer gets a real answer fast, and nothing sits overnight.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">dashboard</span></div>
-<h3 class="text-xl font-bold mb-2">One weekly report that tells you what happened</h3>
-<p class="text-sm text-gray-400">Every Monday, a plain-English summary of the week: jobs done, money in, where things got stuck. You see it without chasing anyone for numbers.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">psychology</span></div>
-<h3 class="text-xl font-bold mb-2">We capture what your senior people know</h3>
-<p class="text-sm text-gray-400">Your best tech has fixes in his head that nobody wrote down. We pull that knowledge into something the whole crew can ask, so it doesn't walk out the door when he retires.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4"><span class="material-icons text-white">school</span></div>
-<h3 class="text-xl font-bold mb-2">We train your team to use AI on the job</h3>
-<p class="text-sm text-gray-400">Buying the tools is the easy part. We sit with your people and show them how to actually use AI in the work they do every day, so it sticks.</p>
-</div>
-</div>
-</section>
-
-<!-- How it works -->
-<section id="how-it-works" class="reveal">
-<div class="max-w-2xl mb-12">
-<div class="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
-<span class="material-icons text-xs">route</span>
- How it works
- </div>
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gray-200">From first call<br/><span class="text-white">to live in weeks.</span></h2>
-<p class="text-gray-400 text-lg">A clear path from "this job eats too much time" to "it just gets handled."</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="glass-card p-6 rounded-2xl">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Step 1</div>
-<div class="flex items-center gap-3 mb-3"><span class="material-icons text-white">search</span><h3 class="text-lg font-bold">First call</h3></div>
-<p class="text-sm text-gray-400 mb-2">30 minutes, free.</p>
-<p class="text-sm text-gray-400">We learn how you run things and where the repetitive work piles up.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Step 2</div>
-<div class="flex items-center gap-3 mb-3"><span class="material-icons text-white">my_location</span><h3 class="text-lg font-bold">Scope</h3></div>
-<p class="text-sm text-gray-400 mb-2">One-page plan.</p>
-<p class="text-sm text-gray-400">We pick the one or two jobs that save the most time the fastest.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Step 3</div>
-<div class="flex items-center gap-3 mb-3"><span class="material-icons text-white">build</span><h3 class="text-lg font-bold">Build</h3></div>
-<p class="text-sm text-gray-400 mb-2">A few weeks per job.</p>
-<p class="text-sm text-gray-400">Built to fit how you already work. You review the output before anything goes out.</p>
-</div>
-<div class="glass-card p-6 rounded-2xl">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Step 4</div>
-<div class="flex items-center gap-3 mb-3"><span class="material-icons text-white">tune</span><h3 class="text-lg font-bold">Keep it running</h3></div>
-<p class="text-sm text-gray-400 mb-2">Ongoing.</p>
-<p class="text-sm text-gray-400">We keep it working as your team and your business change. Add more anytime.</p>
-</div>
-</div>
-</section>
-
-<!-- What makes ours different -->
-<section class="reveal">
-<div class="max-w-2xl mb-12">
-<div class="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
-<span class="material-icons text-xs">verified</span>
- How we work
- </div>
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gray-200">Built to fit your business,<br/><span class="text-white">not the other way around.</span></h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="glass-card p-8 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5"><span class="material-icons text-white">hub</span></div>
-<h3 class="text-xl font-bold mb-3">We fit how you already work.</h3>
-<p class="text-sm text-gray-400">You don't switch to some new platform or change how your team operates. We build around the way you already run things.</p>
-</div>
-<div class="glass-card p-8 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5"><span class="material-icons text-white">record_voice_over</span></div>
-<h3 class="text-xl font-bold mb-3">It sounds like you.</h3>
-<p class="text-sm text-gray-400">Anything that goes out to a customer reads like your shop wrote it. We learn from your real emails and the way your people talk.</p>
-</div>
-<div class="glass-card p-8 rounded-2xl">
-<div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5"><span class="material-icons text-white">supervised_user_circle</span></div>
-<h3 class="text-xl font-bold mb-3">You stay in control.</h3>
-<p class="text-sm text-gray-400">Nothing runs on autopilot. Your people see the work and approve it before it goes anywhere. Your call is the final one.</p>
-</div>
-</div>
-</section>
-
-<!-- Pricing -->
-<section class="reveal">
-<div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
-<div class="absolute top-0 right-0 w-60 h-60 bg-gradient-radial from-white/5 to-transparent -z-0"></div>
-<div class="relative z-10 grid md:grid-cols-3 gap-10">
-<div class="md:col-span-1">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 mb-4"><span class="material-icons text-xs">payments</span> Pricing</div>
-<h2 class="text-4xl font-bold tracking-tight mb-4">Pricing depends<br/>on the work.</h2>
-<p class="text-gray-400 mb-6">Every business is different, so a fixed price wouldn't be honest. Book a free call and we'll scope it.</p>
-</div>
-<div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
-<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Get found and get booked</div>
-<p class="text-2xl font-bold tracking-tight mb-3">For smaller businesses</p>
-<ul class="text-sm text-gray-300 space-y-2">
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> A website you're proud of</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> Your Google listing set up right</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> New leads get a fast reply</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> People find you first and book you</li>
-</ul>
-</div>
-<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-<div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Put AI to work inside</div>
-<p class="text-2xl font-bold tracking-tight mb-3">For bigger teams</p>
-<ul class="text-sm text-gray-300 space-y-2">
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> AI on the repetitive jobs</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> Estimating, paperwork, reporting</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> Capture what your veterans know</li>
-<li class="flex items-start gap-2"><span class="material-icons text-xs mt-0.5">check</span> Training your team on the job</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Final CTA -->
-<section class="text-center reveal">
-<div class="glass-card p-12 rounded-3xl">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to put AI to work?</h2>
-<p class="text-gray-400 mb-8 max-w-lg mx-auto">Book a free 30-minute call. We'll learn how you run things and tell you the one job worth handing off first.</p>
-<a href="/book.html" class="bg-white text-[#08251b] px-8 py-4 rounded-full font-bold bubbly-hover shadow-2xl shadow-white/10 inline-block">Book a free call</a>
-</div>
-</section>
-
 </main>
-
-<footer class="w-full border-t border-white/10 pt-16 pb-8 px-6 bg-surface-darker relative overflow-hidden">
-<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-16 relative z-10">
-<div class="max-w-xs">
-<a href="/" class="flex items-center gap-2 mb-4 group cursor-pointer">
-<span class="material-icons text-white transition-transform group-hover:scale-125">bubble_chart</span>
-<span class="font-bold text-xl tracking-tight">CoGrow</span>
-</a>
-<p class="text-sm text-gray-400 mb-6">Technology consultants for small and mid-sized businesses. AI is usually how we do it. Not always.</p>
-</div>
-<div class="flex gap-16">
-<div>
-<h5 class="font-semibold mb-4 text-sm">Product</h5>
-<ul class="flex flex-col gap-2 text-sm text-gray-400">
-<li><a class="nav-link hover:text-white" href="/solutions.html">Solutions</a></li>
-<li><a class="nav-link hover:text-white" href="/workflows.html">What We Build</a></li>
-<li><a class="nav-link hover:text-white" href="/resources.html">Case Studies</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-semibold mb-4 text-sm">Company</h5>
-<ul class="flex flex-col gap-2 text-sm text-gray-400">
-<li><a class="nav-link hover:text-white" href="/about.html">About</a></li>
-<li><a class="nav-link hover:text-white" href="/blog/index.html">Blog</a></li>
-<li><a class="nav-link hover:text-white" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="max-w-6xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 relative z-10">
-<p>&copy; 2026 CoGrow AI. All rights reserved.</p>
-<div class="flex gap-4">
-<a class="hover:text-white transition-colors bubbly-hover" href="/privacy.html">Privacy Policy</a>
-<a class="hover:text-white transition-colors bubbly-hover" href="/terms.html">Terms of Service</a>
-</div>
-</div>
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html" style="font-size:18px"><i><b></b><b></b><b></b></i>CoGrow</a>
+    <ul class="mono" style="font-size:12px">
+      <li><a href="websites.html">Websites</a></li>
+      <li><a href="workflows.html">Workflows</a></li>
+      <li><a href="ai-training.html">AI Training</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="mailto:paul@cogrow.ai">paul@cogrow.ai</a></li>
+    </ul>
+    <span class="mono dim" style="font-size:11.5px">© 2026 CoGrow AI LLC</span>
+  </div>
 </footer>
-
-<script>
-function reveal(){var e=document.querySelectorAll(".reveal");for(var i=0;i<e.length;i++){var w=window.innerHeight;var t=e[i].getBoundingClientRect().top;if(t<w-150){e[i].classList.add("active")}}}
-window.addEventListener("scroll",reveal);reveal();
-</script>
-</body></html>
+</body>
+</html>
