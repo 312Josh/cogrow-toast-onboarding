@@ -47,7 +47,8 @@ export async function onRequestPost({ request, env }) {
   const restaurantName = field(data, 'restaurantName', 120);
   const contactName = field(data, 'contactName', 120);
   const email = field(data, 'email', 200);
-  if (!restaurantName || !contactName || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || field(data, 'assetPermission', 8) !== 'yes') {
+  const primaryAction = field(data, 'primaryAction', 20);
+  if (!restaurantName || !contactName || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !['order-online', 'view-menu', 'reserve', 'call', 'visit', 'other'].includes(primaryAction) || field(data, 'assetPermission', 8) !== 'yes') {
     return json({ error: 'Complete the required fields and permission checkbox.' }, 400);
   }
 
@@ -56,6 +57,8 @@ export async function onRequestPost({ request, env }) {
   if (files.length > MAX_FILES || total > MAX_TOTAL || files.some(file => file.size > MAX_FILE || !ACCEPTED.has(file.name.split('.').pop().toLowerCase()))) {
     return json({ error: 'Choose up to 12 PNG, JPG, WebP, PDF or DOCX files, 8 MB each and 30 MB total.' }, 400);
   }
+  const assetFolderUrl = field(data, 'assetFolderUrl', 500);
+  if (!files.length && !assetFolderUrl) return json({ error: 'Add at least one file or a shared folder link.' }, 400);
 
   let verified = false;
   try { verified = await verifyTurnstile(field(data, 'cf-turnstile-response', 2048), env.TOAST_TURNSTILE_SECRET, url.hostname); }
@@ -71,11 +74,13 @@ export async function onRequestPost({ request, env }) {
     restaurantName, contactName, email,
     phone: field(data, 'phone', 40),
     currentUrl: field(data, 'currentUrl', 500),
+    restaurantAddress: field(data, 'restaurantAddress', 300),
     pages: field(data, 'pages', 240),
+    primaryAction,
     pageCopy: field(data, 'pageCopy', 12000),
     toastLinks: field(data, 'toastLinks', 2000),
     notes: field(data, 'notes', 4000),
-    assetFolderUrl: field(data, 'assetFolderUrl', 500),
+    assetFolderUrl,
     files: []
   };
   try {
